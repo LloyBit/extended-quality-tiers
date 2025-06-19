@@ -23,12 +23,12 @@ end
 local quality_names = require "quality-names"
 
 local colors = {
-    ["mythic"] = {255, 0, 237},
-    ["fabled"] = {0, 232, 255},
-    ["divine"] = {166, 0, 255},
-    ["exalted"] = {255, 255, 255},
+    ["mythic"] = {0,244,255},
+    ["cosmic"] = {25, 25, 112},
     ["supreme"] = {255, 0, 0},
-    ["reality-bending"] = {0, 0, 0}
+    ["divine"] = {255, 234, 0},
+    ["INFINITE"] = {0, 0, 0},
+    ["INFINITEPLUS1"] = {1, 1, 1}
 }
 
 local function random_color()
@@ -139,7 +139,7 @@ local function get_quality_icon(level)
     return icons, tech_icons
 end
 
-for level = 5, 999 do
+for level = 5, 14 do
     local quality_name = quality_names[level]
     if not quality_name then break end
     local icons, tech_icons = get_quality_icon(level)
@@ -153,7 +153,7 @@ for level = 5, 999 do
         draw_sprite_by_default = true,
         color = color,
         next = quality_names[level + 1],
-        next_probability = 0.1,
+        next_probability = 0.25,
         order = "f" .. string.format("%03d", level),
         beacon_power_usage_multiplier = 1 / 6 / (level - 4),
         mining_drill_resource_drain_multiplier = 1 / 6 / (level - 4),
@@ -228,4 +228,4 @@ legendary.next = "mythic"
 legendary.beacon_power_usage_multiplier = 2 / 6
 legendary.mining_drill_resource_drain_multiplier = 2 / 6
 legendary.science_pack_drain_multiplier = 96 / 100
-legendary.next_probability = 0.1
+legendary.next_probability = 0.25
