@@ -1,3 +1,14 @@
+local epic_research = data.raw["technology"]["epic-quality"]
+local legendary_research = data.raw["technology"]["legendary-quality"]
+
+if epic_research and legendary_research then
+  -- Копируем все свойства легендарного в эпическое
+  epic_research.icon = legendary_research.icon
+  epic_research.effects = legendary_research.effects
+  epic_research.prerequisites = legendary_research.prerequisites
+  data.raw["technology"]["legendary-quality"] = nil  -- Удаляем оригинал
+end
+
 local quality_names = require "quality-names"
 
 local colors = {
