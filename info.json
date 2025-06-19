@@ -1,15 +1,14 @@
 {
   "name": "extended-quality-tiers",
   "version": "1.0.1",
-  "title": "Infinite Quality Tiers",
+  "title": "extended Quality Tiers",
   "author": "notnotmelon",
-  "homepage": "https://mods.factorio.com/mod/infinite-quality-tiers",
-  "description": "Unlimited gambling! Adds a postgame infinite technology with infinite tiers of quality.",
+  "homepage": "https://mods.factorio.com/mod/extended-quality-tiers",
+  "description": "Unlimited gambling! Adds a postgame extended technology with extended tiers of quality.",
   "factorio_version": "2.0",
   "dependencies": [
     "base",
-    "quality",
-    "? extended-quality-tiers"
+    "quality"
   ],
   
   "quality_required": true,

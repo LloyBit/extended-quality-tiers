@@ -1,8 +1,8 @@
-[![Release](https://github.com/notnotmelon/infinite-quality-tiers/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/notnotmelon/infinite-quality-tiers/actions/workflows/release.yml)
+[![Release](https://github.com/notnotmelon/extended-quality-tiers/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/notnotmelon/extended-quality-tiers/actions/workflows/release.yml)
 
-### Infinite Quality Tiers
+### extended Quality Tiers
 
-This mod adds a new infinite technology unlocked with promethium science packs. Each level of the infinite tech grants one extra quality tier.
+This mod adds a new extended technology unlocked with promethium science packs. Each level of the extended tech grants one extra quality tier.
 
 WARNING: This is the worst mod I have ever made and possibly the worst mod on the entire mod portal.
 

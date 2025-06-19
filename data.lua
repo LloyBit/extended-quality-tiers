@@ -3,7 +3,7 @@ local legendary_research = data.raw["technology"]["legendary-quality"]
 
 if epic_research and legendary_research then
     -- 1. Сначала копируем нужные свойства (без перезаписи лишнего)
-    epic_research.icon = epic_research.icon or legendary_research.icon  -- Сохраняем оригинальный icon если есть
+    epic_research.icon = legendary_research.icon  -- Сохраняем оригинальный icon если есть
     epic_research.effects = epic_research.effects or {}  -- Инициализируем если нет
     
     -- 2. Добавляем эффекты легендарного качества к эпическому
@@ -51,22 +51,22 @@ local function get_quality_icon(level)
     if colors[quality_name] then
         local icons = {
             {
-                icon = "__infinite-quality-tiers__/graphics/icons/quality-pips-background.png",
+                icon = "__extended-quality-tiers__/graphics/icons/quality-pips-background.png",
                 icon_size = 64
             },
             {
-                icon = "__infinite-quality-tiers__/graphics/icons/quality-pips.png",
+                icon = "__extended-quality-tiers__/graphics/icons/quality-pips.png",
                 icon_size = 64,
                 tint = get_color(quality_name)
             },
         }
         local tech_icons = {
             {
-                icon = "__infinite-quality-tiers__/graphics/technology/infinite-quality.png",
+                icon = "__extended-quality-tiers__/graphics/technology/extended-quality.png",
                 icon_size = 256,
             },
             {
-                icon = "__infinite-quality-tiers__/graphics/technology/quality-pips.png",
+                icon = "__extended-quality-tiers__/graphics/technology/quality-pips.png",
                 icon_size = 256,
                 tint = get_color(quality_name)
             },
@@ -76,62 +76,62 @@ local function get_quality_icon(level)
 
     local icons = {
         {
-            icon = "__infinite-quality-tiers__/graphics/icons/quality-pips-background.png",
+            icon = "__extended-quality-tiers__/graphics/icons/quality-pips-background.png",
             icon_size = 64
         },
         {
-            icon = "__infinite-quality-tiers__/graphics/icons/quality-pips-1.png",
+            icon = "__extended-quality-tiers__/graphics/icons/quality-pips-1.png",
             icon_size = 64,
             tint = get_color(quality_names[level - 0])
         },
         {
-            icon = "__infinite-quality-tiers__/graphics/icons/quality-pips-2.png",
+            icon = "__extended-quality-tiers__/graphics/icons/quality-pips-2.png",
             icon_size = 64,
             tint = get_color(quality_names[level - 1])
         },
         {
-            icon = "__infinite-quality-tiers__/graphics/icons/quality-pips-3.png",
+            icon = "__extended-quality-tiers__/graphics/icons/quality-pips-3.png",
             icon_size = 64,
             tint = get_color(quality_names[level - 2])
         },
         {
-            icon = "__infinite-quality-tiers__/graphics/icons/quality-pips-4.png",
+            icon = "__extended-quality-tiers__/graphics/icons/quality-pips-4.png",
             icon_size = 64,
             tint = get_color(quality_names[level - 3])
         },
         {
-            icon = "__infinite-quality-tiers__/graphics/icons/quality-pips-5.png",
+            icon = "__extended-quality-tiers__/graphics/icons/quality-pips-5.png",
             icon_size = 64,
             tint = get_color(quality_names[level - 4])
         }
     }
     local tech_icons = {
         {
-            icon = "__infinite-quality-tiers__/graphics/technology/infinite-quality.png",
+            icon = "__extended-quality-tiers__/graphics/technology/extended-quality.png",
             icon_size = 256,
         },
         {
-            icon = "__infinite-quality-tiers__/graphics/technology/quality-pips-1.png",
+            icon = "__extended-quality-tiers__/graphics/technology/quality-pips-1.png",
             icon_size = 256,
             tint = get_color(quality_names[level - 0])
         },
         {
-            icon = "__infinite-quality-tiers__/graphics/technology/quality-pips-2.png",
+            icon = "__extended-quality-tiers__/graphics/technology/quality-pips-2.png",
             icon_size = 256,
             tint = get_color(quality_names[level - 1])
         },
         {
-            icon = "__infinite-quality-tiers__/graphics/technology/quality-pips-3.png",
+            icon = "__extended-quality-tiers__/graphics/technology/quality-pips-3.png",
             icon_size = 256,
             tint = get_color(quality_names[level - 2])
         },
         {
-            icon = "__infinite-quality-tiers__/graphics/technology/quality-pips-4.png",
+            icon = "__extended-quality-tiers__/graphics/technology/quality-pips-4.png",
             icon_size = 256,
             tint = get_color(quality_names[level - 3])
         },
         {
-            icon = "__infinite-quality-tiers__/graphics/technology/quality-pips-5.png",
+            icon = "__extended-quality-tiers__/graphics/technology/quality-pips-5.png",
             icon_size = 256,
             tint = get_color(quality_names[level - 4])
         }
@@ -167,19 +167,19 @@ for level = 5, 999 do
     if 167 <= level and level <= 247 then
         technology_localised_name = {"quality-name." .. quality_name}
     else
-        technology_localised_name = {"technology-name.infinite-quality", {"quality-name." .. quality_name}}
+        technology_localised_name = {"technology-name.extended-quality", {"quality-name." .. quality_name}}
     end
 
     local tech_prereqs
     if mods["space-age"] then
-        tech_prereqs = level == 5 and {"cryogenic-science-pack", "epic-quality"} or {quality_names[level - 1] .. "-infinite-quality"}
+        tech_prereqs = level == 5 and {"cryogenic-science-pack", "epic-quality"} or {quality_names[level - 1] .. "-extended-quality"}
     else
-        tech_prereqs = level == 5 and {"space-science-pack", "epic-quality"} or {quality_names[level - 1] .. "-infinite-quality"}
+        tech_prereqs = level == 5 and {"space-science-pack", "epic-quality"} or {quality_names[level - 1] .. "-extended-quality"}
     end
 
     local technology = {
         type = "technology",
-        name = quality_name .. "-infinite-quality",
+        name = quality_name .. "-extended-quality",
         localised_name = technology_localised_name,
         icons = tech_icons,
         enabled = level == 5,
