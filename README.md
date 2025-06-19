@@ -1,5 +1,5 @@
 ### The original project
-https://github.com/notnotmelon/infinite-quality-tiers
+Fork of https://github.com/notnotmelon/infinite-quality-tiers by @notnotmelon
 Ive enjoyed the idea of this mod so i tried to moderate and simplify it. In my opinion it will be more attractive for common players like me. Great thanks for original author for his work, i hope it will spread wider.
 
 ### Changes compared to original
