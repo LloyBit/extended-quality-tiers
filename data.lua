@@ -2,21 +2,21 @@ local epic_research = data.raw["technology"]["epic-quality"]
 local legendary_research = data.raw["technology"]["legendary-quality"]
 
 if epic_research and legendary_research then
-    -- 1. Сначала копируем нужные свойства (без перезаписи лишнего)
-    epic_research.icon = legendary_research.icon  -- Сохраняем оригинальный icon если есть
-    epic_research.effects = epic_research.effects or {}  -- Инициализируем если нет
+    -- 1. Copying needed prop
+    epic_research.icon = legendary_research.icon  -- Saving original icon if it exist
+    epic_research.effects = epic_research.effects or {}  -- Init if empty
     
-    -- 2. Добавляем эффекты легендарного качества к эпическому
+    -- 2. adding legendary quality effects to epic
     for _, effect in ipairs(legendary_research.effects or {}) do
         table.insert(epic_research.effects, effect)
     end
     
-    -- 3. Модифицируем легендарное исследование
+    -- 3. modify legendary_research
     legendary_research.enabled = false
     legendary_research.prerequisites = {"epic-quality"}
     legendary_research.hidden = true
     
-    -- 4. Обновляем описание (опционально)
+    -- 4. update description
     epic_research.localised_description = {"technology-description.epic-legendary-merged"}
 end
 
