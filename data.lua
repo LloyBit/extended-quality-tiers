@@ -6,7 +6,12 @@ if epic_research and legendary_research then
   epic_research.icon = legendary_research.icon
   epic_research.effects = legendary_research.effects
   epic_research.prerequisites = legendary_research.prerequisites
-  data.raw["technology"]["legendary-quality"] = nil  -- Удаляем оригинал
+  local legendary = data.raw["technology"]["legendary-quality"]
+    if legendary then
+        legendary.enabled = false  -- Отключаем авторазблокировку
+        legendary.prerequisites = {"epic-quality"}  -- Зависит от эпического
+        legendary.hidden = true  -- Скрываем из интерфейса (опционально)
+    end
 end
 
 local quality_names = require "quality-names"
