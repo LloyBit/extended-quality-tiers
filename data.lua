@@ -2,16 +2,22 @@ local epic_research = data.raw["technology"]["epic-quality"]
 local legendary_research = data.raw["technology"]["legendary-quality"]
 
 if epic_research and legendary_research then
-  -- Копируем все свойства легендарного в эпическое
-  epic_research.icon = legendary_research.icon
-  epic_research.effects = legendary_research.effects
-  epic_research.prerequisites = legendary_research.prerequisites
-  local legendary = data.raw["technology"]["legendary-quality"]
-    if legendary then
-        legendary.enabled = false  -- Отключаем авторазблокировку
-        legendary.prerequisites = {"epic-quality"}  -- Зависит от эпического
-        legendary.hidden = true  -- Скрываем из интерфейса (опционально)
+    -- 1. Сначала копируем нужные свойства (без перезаписи лишнего)
+    epic_research.icon = epic_research.icon or legendary_research.icon  -- Сохраняем оригинальный icon если есть
+    epic_research.effects = epic_research.effects or {}  -- Инициализируем если нет
+    
+    -- 2. Добавляем эффекты легендарного качества к эпическому
+    for _, effect in ipairs(legendary_research.effects or {}) do
+        table.insert(epic_research.effects, effect)
     end
+    
+    -- 3. Модифицируем легендарное исследование
+    legendary_research.enabled = false
+    legendary_research.prerequisites = {"epic-quality"}
+    legendary_research.hidden = true
+    
+    -- 4. Обновляем описание (опционально)
+    epic_research.localised_description = {"technology-description.epic-legendary-merged"}
 end
 
 local quality_names = require "quality-names"
