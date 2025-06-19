@@ -1,25 +1,18 @@
-[![Release](https://github.com/notnotmelon/extended-quality-tiers/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/notnotmelon/extended-quality-tiers/actions/workflows/release.yml)
+### The original project
+https://github.com/notnotmelon/infinite-quality-tiers
+Ive enjoyed the idea of this mod so i tried to moderate and simplify it. In my opinion it will be more attractive for common players like me. Great thanks for original author for his work, i hope it will spread wider.
 
-### extended Quality Tiers
+### Changes compared to original
+- Reduced amount of external qualities to 6(11 at all, including base qualities). As a consequence some items in final quality will increase their changable properties in 2 or 4 times
+- Renamed some qualities, so every higher ones try to sound more considerable
+- Increased chance to get higher quality since legendary (from 0.1 to 0.25) just in case to accelerate endgame gameplay
 
-This mod adds a new extended technology unlocked with promethium science packs. Each level of the extended tech grants one extra quality tier.
+### Extended Quality Tiers
 
-WARNING: This is the worst mod I have ever made and possibly the worst mod on the entire mod portal.
-
-![](https://files.catbox.moe/qzdu7d.png)
-
----
-
-### Introducing the "Cringe Spidertron"
-
-![](https://files.catbox.moe/d2vlei.mp4)
+This mod adds a new extended technology unlocked with promethium science packs. Each level of the extended tech grants one extra quality tier. Legendary quality unlocks with researching epic quality
 
 ---
-
-### Okay, but how can I craft those crazy high levels of quality?
-
-I recommend you to craft the **Stinky quality module 3**
-
-![](https://files.catbox.moe/9b6i8s.png)
 
 In this mod, once a recipe goes higher than 100% quality it will start skipping tiers while being crafted or recycled.
+
+
