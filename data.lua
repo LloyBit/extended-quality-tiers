@@ -150,9 +150,9 @@ for level = 5, 999 do
 
     local tech_prereqs
     if mods["space-age"] then
-        tech_prereqs = level == 5 and {"promethium-science-pack", "legendary-quality"} or {quality_names[level - 1] .. "-infinite-quality"}
+        tech_prereqs = level == 5 and {"cryogenic-science-pack", "epic-quality"} or {quality_names[level - 1] .. "-infinite-quality"}
     else
-        tech_prereqs = level == 5 and {"space-science-pack", "legendary-quality"} or {quality_names[level - 1] .. "-infinite-quality"}
+        tech_prereqs = level == 5 and {"space-science-pack", "epic-quality"} or {quality_names[level - 1] .. "-infinite-quality"}
     end
 
     local technology = {
@@ -168,7 +168,7 @@ for level = 5, 999 do
             }
         },
         unit = {
-            count = (10000 * (level - 5)) + (1.05 ^ (level - 5) * 10000),
+            count = (100 * (level - 5)) + (1.05 ^ (level - 5) * 100),
             ingredients = mods["space-age"] and {
                 {"automation-science-pack",      1},
                 {"logistic-science-pack",        1},
@@ -191,7 +191,7 @@ for level = 5, 999 do
                 {"utility-science-pack", 1},
                 {"space-science-pack", 1}
             },
-            time = 120
+            time = 60
         },
         prerequisites = tech_prereqs,
         order = "f" .. string.format("%03d", level)

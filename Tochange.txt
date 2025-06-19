@@ -1,0 +1,5 @@
+1) Delete limit of production bonus to stations
+2) Increase bonus of modules
+3) Redo modules names and colors
+4) Join legendary module science and epic science
+5) Allow to craft every quality while previous "legendary quality" researched 
